@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>webrtc</title>
+    <meta charset="utf-8" />
+    <style>
+        .apprtc {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="join">
+        <label>Enter room key to join a room:</label>
+        <input type="text" id="new_key" />
+        <input type="button" id="join" value="Join Room"/>
+    </div>
+    <div id="id">
+        <label id="idlabel">Current room key:</label>
+        <label id="room_key"></label>
+    </div>
+    <iframe class="apprtc" src="/"></iframe>
+    <script>
+        var addID = function (id) {
+            document.querySelector('#room_key').textContent = id;
+        };
+
+        document.querySelector('#join').addEventListener('click', function (evt) {
+            var newKey = document.querySelector('#new_key').value;
+            if (newKey.length > 0) {
+                document.querySelector('.apprtc').src = "/?r=" + newKey;
+            }
+        });
+
+        window.addEventListener('message', function (evt) {
+            var room_key = JSON.parse(evt.data)['room_key'];
+            addID(room_key);
+            
+        }, false);
+    </script>
+</body>
+</html>
