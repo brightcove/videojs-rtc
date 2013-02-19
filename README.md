@@ -3,6 +3,8 @@
 This is a plugin for [VideoJS](github/zencoder:videojs) which uses WebRTC to allow you to chat
 with someone else while you are watching a video.
 
+There is a [demo](http://videojs-rtc.appspot.com/html/demo.html) available.
+
 ## AppRTC
 
 The backend code (running on google's appengine) was taken from the
