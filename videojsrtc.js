@@ -15,7 +15,7 @@ videojs.plugin('videojsRtc', function(options) {
     labelId = document.createElement('label'),
     labelKey = document.createElement('label'),
 
-    iframeSrc = 'http://videojs-rtc.appspot.com/',
+    iframeSrc = '//videojs-rtc.appspot.com/',
     prop,
     vel = this.el();
 
