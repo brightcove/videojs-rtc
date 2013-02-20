@@ -125,7 +125,7 @@
 
   function initialize() {
     console.log("Initializing; room={{ room_key }}.");
-    window.parent && window.parent.postMessage(JSON.stringify({room_key: "{{ room_key  }}"}), window.parent.location);
+    window.parent && window.parent.postMessage(JSON.stringify({room_key: "{{ room_key  }}"}), '*');
     card = document.getElementById("card");
     localVideo = document.getElementById("localVideo");
     miniVideo = document.getElementById("miniVideo");
