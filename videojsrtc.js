@@ -22,6 +22,7 @@ videojs.plugin('videojsRtc', function(options) {
   labelJoin.textContent = "Enter room key to join a room:";
   inputText.type = "text";
   inputButton.value = "Join Room";
+  inputButton.type = "button";
 
   inputButton.addEventListener('click', function(evt) {
     var newKey = inputText.value;
