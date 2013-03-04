@@ -164,8 +164,9 @@
       console.log("Requested access to local media with mediaConstraints:\n" +
                   "  \"" + JSON.stringify(constraints) + "\"");
     } catch (e) {
-      alert("getUserMedia() failed. Is this a WebRTC capable browser?");
+      //alert("getUserMedia() failed. Is this a WebRTC capable browser?");
       console.log("getUserMedia failed with exception: " + e.message);
+      messageUserMediaError();
     }
   }
 
@@ -185,7 +186,8 @@
                   "  constraints: \"" + JSON.stringify(pc_constraints) + "\".");
     } catch (e) {
       console.log("Failed to create PeerConnection, exception: " + e.message);
-      alert("Cannot create RTCPeerConnection object; WebRTC is not supported by this browser.");
+      //alert("Cannot create RTCPeerConnection object; WebRTC is not supported by this browser.");
+      messageUserMediaError();
         return;
     }
 
@@ -306,7 +308,7 @@
 
   function onUserMediaError(error) {
     console.log("Failed to get access to local media. Error code was " + error.code);
-    alert("Failed to get access to local media. Error code was " + error.code + ".");
+    //alert("Failed to get access to local media. Error code was " + error.code + ".");
     messageUserMediaError();
   }
 
