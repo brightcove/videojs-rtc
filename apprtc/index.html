@@ -302,6 +302,7 @@
     localStream = stream;
     // Caller creates PeerConnection.
     if (initiator) maybeStart();
+    messageShowChat();
   }
 
   function onUserMediaError(error) {

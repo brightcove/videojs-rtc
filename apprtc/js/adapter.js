@@ -8,6 +8,10 @@ function messageUserMediaError(message) {
   window.parent && window.parent.postMessage(JSON.stringify({error: message}), '*');
 }
 
+function messageShowChat(message) {
+  window.parent && window.parent.postMessage(JSON.stringify({userMedia: 1}), '*');
+}
+
 if (navigator.mozGetUserMedia) {
   console.log("This appears to be Firefox");
 

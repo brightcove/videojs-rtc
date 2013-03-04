@@ -44,9 +44,12 @@ videojs.plugin('videojsRtc', function(options) {
     console.log()
     var jsonData, room_key;
     jsonData = JSON.parse(evt.data);
-    if(jsonData.error) {
+    if (jsonData.error) {
       videojs.log(jsonData.error);
       wrapperRtcDiv.parentElement.removeChild(wrapperRtcDiv);
+    } else if (jsonData.userMedia) {
+      wrapperRtcDiv.style.height = 'auto';
+      wrapperRtcDiv.style.width = 'auto';
     } else {
       var room_key = jsonData['room_key'];
       labelKey.textContent = room_key;
@@ -57,6 +60,9 @@ videojs.plugin('videojsRtc', function(options) {
   iframe.height = 350;
   iframe.width = 600;
 
+  wrapperRtcDiv.style.height = '1px';
+  wrapperRtcDiv.style.width = '1px';
+  wrapperRtcDiv.style.overflow = "hidden";
   wrapperRtcDiv.appendChild(divJoin);
   wrapperRtcDiv.appendChild(divId);
   wrapperRtcDiv.appendChild(iframe);
