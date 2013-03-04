@@ -45,6 +45,7 @@ videojs.plugin('videojsRtc', function(options) {
     var jsonData, room_key;
     jsonData = JSON.parse(evt.data);
     if(jsonData.error) {
+      videojs.log(jsonData.error);
       wrapperRtcDiv.parentElement.removeChild(wrapperRtcDiv);
     } else {
       var room_key = jsonData['room_key'];
