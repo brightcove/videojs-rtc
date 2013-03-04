@@ -4,6 +4,10 @@ var attachMediaStream = null;
 var reattachMediaStream = null;
 var webrtcDetectedBrowser = null;
 
+function messageUserMediaError() {
+  window.parent && window.parent.postMessage(JSON.stringify({error: "error"}), '*');
+}
+
 if (navigator.mozGetUserMedia) {
   console.log("This appears to be Firefox");
 
@@ -86,4 +90,5 @@ if (navigator.mozGetUserMedia) {
   }
 } else {
   console.log("Browser does not appear to be WebRTC-capable");
+  messageUserMediaError();
 }

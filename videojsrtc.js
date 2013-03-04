@@ -41,9 +41,16 @@ videojs.plugin('videojsRtc', function(options) {
   divId.appendChild(labelKey);
 
   window.addEventListener('message', function(evt) {
-    var room_key = JSON.parse(evt.data)['room_key'];
-    labelKey.textContent = room_key;
-  })
+    console.log()
+    var jsonData, room_key;
+    jsonData = JSON.parse(evt.data);
+    if(jsonData.error) {
+      wrapperRtcDiv.parentElement.removeChild(wrapperRtcDiv);
+    } else {
+      var room_key = jsonData['room_key'];
+      labelKey.textContent = room_key;
+    }
+  });
 
   iframe.src = iframeSrc;
   iframe.height = 350;

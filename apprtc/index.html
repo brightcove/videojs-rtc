@@ -307,6 +307,7 @@
   function onUserMediaError(error) {
     console.log("Failed to get access to local media. Error code was " + error.code);
     alert("Failed to get access to local media. Error code was " + error.code + ".");
+    messageUserMediaError();
   }
 
   function onIceCandidate(event) {
