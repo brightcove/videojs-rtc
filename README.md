@@ -12,6 +12,7 @@ The backend code (running on google's appengine) was taken from the
 build by the Firefox and Chrome teams to have a simple chat app.
 I modified the [code](https://code.google.com/p/webrtc-samples/source/browse/trunk/apprtc/) to send
 the channel key up to the parent via a postMessage so that it could be embeddable in an iframe.
+AppRTC is licensed under the [New BSD License](http://opensource.org/licenses/BSD-3-Clause)
 
 # License
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)
