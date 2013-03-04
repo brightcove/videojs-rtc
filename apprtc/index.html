@@ -164,9 +164,8 @@
       console.log("Requested access to local media with mediaConstraints:\n" +
                   "  \"" + JSON.stringify(constraints) + "\"");
     } catch (e) {
-      //alert("getUserMedia() failed. Is this a WebRTC capable browser?");
       console.log("getUserMedia failed with exception: " + e.message);
-      messageUserMediaError();
+      messageUserMediaError("getUserMedia failed with exception: " + e.message);
     }
   }
 
@@ -186,8 +185,7 @@
                   "  constraints: \"" + JSON.stringify(pc_constraints) + "\".");
     } catch (e) {
       console.log("Failed to create PeerConnection, exception: " + e.message);
-      //alert("Cannot create RTCPeerConnection object; WebRTC is not supported by this browser.");
-      messageUserMediaError();
+      messageUserMediaError("Cannot create RTCPeerConnection object; WebRTC is not supported by this browser. Error: " + e.message);
         return;
     }
 
@@ -308,8 +306,7 @@
 
   function onUserMediaError(error) {
     console.log("Failed to get access to local media. Error code was " + error.code);
-    //alert("Failed to get access to local media. Error code was " + error.code + ".");
-    messageUserMediaError();
+    messageUserMediaError("Failed to get access to local media. Error code was " + error.code + ".");
   }
 
   function onIceCandidate(event) {

@@ -4,8 +4,8 @@ var attachMediaStream = null;
 var reattachMediaStream = null;
 var webrtcDetectedBrowser = null;
 
-function messageUserMediaError() {
-  window.parent && window.parent.postMessage(JSON.stringify({error: "error"}), '*');
+function messageUserMediaError(message) {
+  window.parent && window.parent.postMessage(JSON.stringify({error: message}), '*');
 }
 
 if (navigator.mozGetUserMedia) {
