@@ -19,7 +19,7 @@ video.videojsRtc({});
 And now you have a videochat window if your browser supports webRTC and userMedia.
 If it doesn't support it, it will gracefully hide the plugin.
 
-## To talk to other
+## To talk to others
 Just grab the room key, give it to a friend along with the URL and have them
 enter the key into the textbox and then hit 'Join Room'.
 
