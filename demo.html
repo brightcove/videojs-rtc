@@ -9,12 +9,13 @@
     <header>
        VidoeJS RTC Demo 
     </header>
-    <video id="video" height="300" width="600"
-            class="video-js vjs-default-skin" src="http://video-js.zencoder.com/oceans-clip.mp4">
+    <video id="video" height="300" width="600" class="video-js vjs-default-skin">
+      <source type="video/mp4" src="http://video-js.zencoder.com/oceans-clip.mp4">
+    </video>
     <footer>
     </footer>
 
-    <script src="video-js/video.js"></script>
+    <script src="video-js/combined.video.js"></script>
     <script src="videojsrtc.js"></script>
     <script>
         var video = videojs("#video");
